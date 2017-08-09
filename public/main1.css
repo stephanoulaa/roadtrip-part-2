@@ -1,0 +1,42 @@
+body {
+    background-color: black;
+    color: darkgrey;
+}
+
+#boston {
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    float: right;
+}
+
+#header {
+    font-size: 50px;
+}
+
+.info {
+    padding-top: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+}
+
+#downtown {
+    border-radius: 50%;
+    float: left;
+}
+
+#newbury {
+    border-radius: 50%;
+    float: right;
+}
+
+.next-trip {
+    color: peru;
+    text-align: center;
+    font-size: 24px;
+}
+
+#next-link {
+    font-size: 20px;
+}
