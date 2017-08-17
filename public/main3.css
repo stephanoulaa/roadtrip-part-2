@@ -1,0 +1,46 @@
+body {
+    background-color: violet;
+    color: dimgray;
+}
+
+#chicago {
+    height: 60%;
+    width: 60%;
+    float: right;
+    border-radius: 50%;
+}
+
+#header {
+    font-size: 50px;
+}
+
+.info {
+    padding-top: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+}
+
+#downtown {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    float: left;
+}
+
+#pizza {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    float: right;
+}
+
+.next-trip {
+    color: peru;
+    text-align: center;
+    font-size: 24px;
+}
+
+#next-link {
+    font-size: 20px;
+}

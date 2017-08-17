@@ -12,6 +12,11 @@ body {
     border-bottom: 15px double dimgrey;
 }
 
+.all-the-ish {
+    border: 5px solid antiquewhite;
+    background-color: antiquewhite;
+}
+
 #roatrip-img {
     height: 10%;
     width: 30%;
@@ -32,10 +37,11 @@ body {
 }
 
 #water-img {
-    height: 8%;
-    width: 8%;
+    height: 30%;
+    width: 30%;
     padding-top: 50px; 
     padding-bottom: 50px;
+    border-radius: 50%;
 }
 
 #tire-img {
@@ -48,12 +54,14 @@ body {
     height: 30%;
     width: 30%;
     padding-bottom: 50px;
+    border-radius: 50%;
 }
 
 #snacks-img {
     height: 30%;
     width: 30%;
     padding-bottom: 50px;
+    border-radius: 50%;
 }
 
 .item-info {
@@ -135,4 +143,8 @@ body {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 25px;
+}
+
+#validateP {
+    color: red;
 }

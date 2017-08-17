@@ -20,37 +20,93 @@ var items = [
         cost: 3,
     }
 ]
-$(document).ready(function(){
-    
-    //need to append total wieght and total cost w/jquery WHEN item is added/removed
-    for (var i=0; i<items.length; i++) {
-        $('#total-weight').on('click', function() {
-            $('#total-weight').append('<div>' + items[i].weight + '</div>');
-        });
-        $('#total-cost').on('click', function() {
-            $('#total-cost').append('<div>' + items[i].cost + '</div>');
-        });
-    } //end of for loop
-    
-    
-    //stuff to #the-button at end of page
-    $('#the-button').on('click', function(){
-        if (($('#total-weight') <== 200) && ($('#total-cost') <== 200)) {
-            $.post(`/validate-cargo`, function(data) {
-                $('#the-button').html(data);
-            });
-            $('#the-button').css("border", "green");
-            console.log('Valid Weight and Cost!');
-        } else if (($('#total-weight') <== 200) && ($('#total-cost') >== 200)) {
-            $('#the-button').css("border", "orange");
-            console.log('Careful: Valid Weight but NOT a Valid Cost!');
-        } else if (($('#total-weight') >== 200) && ($('#total-cost') <== 200)) {
-            $('#the-button').css("border", "orange");
-            console.log('Careful: Valid Cost but NOT a Valid Weight!');
-        } else if (($('#total-weight') >== 200) && ($('#total-cost') >== 200)) {
-            $('#the-button').css("border", "red");
-            console.log('Careful: Neither a Valid Weight NOR a Valid Cost!');
-        }
-    })
-    
-}); //end of document.ready
+
+$(document).ready(function() {
+  var waterCount = 0
+  var tireCount = 0
+  var shoeCount = 0
+  var snackCount = 0
+  var totalPriceCount = 0
+  var totalWeightCount = 0
+  $("#waterCounter").text("Count: "+waterCount)
+  $("#tireCounter").text("Count: "+tireCount)
+  $("#shoeCounter").text("Count :"+shoeCount)
+  $("#snackCounter").text("Count :"+snackCount)
+  $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+  $(".totalWeightCount").text("Total Weight: "+totalWeightCount +" lbs")
+  $("#waterIncrease").click(function() {
+    waterCount++
+    totalPriceCount += 1.5
+    totalWeightCount += 1
+    $("#waterCounter").text("Count: "+waterCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#waterDecrease").click(function() {
+    waterCount--
+    totalPriceCount -= 1.5
+    totalWeightCount -= 1
+    $("#waterCounter").text("Count: "+waterCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#tireIncrease").click(function() {
+    tireCount++
+    totalPriceCount += 80
+    totalWeightCount += 22
+    $("#tireCounter").text("Count: "+tireCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#tireDecrease").click(function() {
+    tireCount--
+    totalPriceCount -= 80
+    totalWeightCount -= 22
+    $("#tireCounter").text("Count: "+tireCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#shoeIncrease").click(function() {
+    shoeCount++
+    totalPriceCount += 35
+    totalWeightCount += 2.5
+    $("#shoeCounter").text("Count: "+shoeCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#shoeDecrease").click(function() {
+    shoeCount--
+    totalPriceCount -= 35
+    totalWeightCount -= 2.5
+    $("#shoeCounter").text("Count: "+shoeCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#snackIncrease").click(function() {
+    snackCount++
+    totalPriceCount += 3
+    totalWeightCount += 1
+    $("#snackCounter").text("Count: "+snackCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#snackDecrease").click(function() {
+    snackCount--
+    totalPriceCount -= 3
+    totalWeightCount -= 1
+    $("#snackCounter").text("Count: "+snackCount)
+    $(".totalPriceCount").text("Total Price: $"+totalPriceCount)
+    $(".totalWeightCount").text("Total Weight: "+totalWeightCount + " lbs")
+  })
+  $("#validate").click(function() {
+    if (totalPriceCount > 200 && totalWeightCount > 200) {
+      $("#validateP").text("Oops! Your have gone over your total weight limit of 200 lbs and price limit of $200. Please make changes accordingly.")
+    } else if (totalWeightCount > 200) {
+      $("#validateP").text("Oops! Your have gone over your total weight limit of 200 lbs. Please make changes accordingly.")
+    } else if(totalPriceCount > 200) {
+      $("#validateP").text("Oops! Your have gone over your total price limit of $200. Please make changes accordingly.")
+    } else {
+      $("#validateP").text('')
+    }
+  })
+})

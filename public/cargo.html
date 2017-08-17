@@ -6,13 +6,13 @@
     </head>
     <body>
         <div class='header'>
-            <h1>Packing for the Roadtrip</h1>
+            <h1>Roadtrip Across America</h1>
             <img id='roatrip-img' src='img2/roadtrip.jpg'/>
         </div>
         <!--list: price and weight-->
         <!--for each: add and remove buttons-->
         <div class='images'>
-            <img id='water-img' src="img2/water.jpg"/>
+            <img id='water-img' src="img2/bottles.jpg"/>
             <br>
             <img id='tire-img' src="img2/car-tire.png"/>
             <br>
@@ -21,43 +21,59 @@
             <img id='snacks-img' src="img2/snack.jpg"/>
             <br>
         </div>
-        <div class='item-info'>
-            <p id='water-text'>Weight: 1 lb</p>
-            <p id='water-text2'>Price: $1.50</p>
-            <p id='tire-text'>Weight: 22 lbs</p>
-            <p id='tire-text2'>Price: $80.00 </p>
-            <p id='shoe-text'>Weight: 2.5 lbs</p>
-            <p id='shoe-text2'>Price: $35.00</p>
-            <p id='snack-text'>Weight: 0.33 lbs</p>
-            <p id='snack-text2'>Price: $3.00</p>
-        </div>
-        <div class='water-buttons'>
-            <button type="button" class="btn btn-success">Add</button>
-            <button type="button" class="btn btn-danger">Remove</button>
-        </div>
-        <div class='tire-buttons'>
-            <button type="button" class="btn btn-success">Add</button>
-            <button type="button" class="btn btn-danger">Remove</button>
-        </div>
-        <div class='shoe-buttons'>
-            <button type="button" class="btn btn-success">Add</button>
-            <button type="button" class="btn btn-danger">Remove</button>
-        </div>
-        <div class='snack-buttons'>
-            <button type="button" class="btn btn-success">Add</button>
-            <button type="button" class="btn btn-danger">Remove</button>
-        </div>
-        
-        <div class='the-button'>
-            <button type="button" class="btn btn-primary">Primary</button>
-        </div>
-        <div class='totals'>
-            <p id='total-weight'>Total Weight: </p>
-            <p id='total-cost'>Total Cost: </p>
+        <div class='all-the-ish'>
+            <div class='item-info'>
+                <p id='water-text'>Weight: 1 lb</p>
+                <p id='water-text2'>Price: $1.50</p>
+                <p id='tire-text'>Weight: 22 lbs</p>
+                <p id='tire-text2'>Price: $80.00 </p>
+                <p id='shoe-text'>Weight: 2.5 lbs</p>
+                <p id='shoe-text2'>Price: $35.00</p>
+                <p id='snack-text'>Weight: 1 lb</p>
+                <p id='snack-text2'>Price: $3.00</p>
+            </div>
+            <div class='water-buttons'>
+                <button id='waterIncrease' type="button" class="btn btn-success">Add</button>
+                <button id='waterDecrease' type="button" class="btn btn-danger">Remove</button>
+                <p id='waterCounter'></p>
+                <p class='totalWeightCount'></p>
+                <p class='totalPriceCount'></p>
+            </div>
+            <div class='tire-buttons'>
+                <button id='tireIncrease'type="button" class="btn btn-success">Add</button>
+                <button id='tireDecrease'type="button" class="btn btn-danger">Remove</button>
+                <p id='tireCounter'></p>
+                <p class='totalWeightCount'></p>
+                <p class='totalPriceCount'></p>
+            </div>
+            <div class='shoe-buttons'>
+                <button id='shoeIncrease'type="button" class="btn btn-success">Add</button>
+                <button id='shoeDecrease'type="button" class="btn btn-danger">Remove</button>
+                <p id='shoeCounter'></p>
+                <p class='totalWeightCount'></p>
+                <p class='totalPriceCount'></p>
+            </div>
+            <div class='snack-buttons'>
+                <button id='snackIncrease' type="button" class="btn btn-success">Add</button>
+                <button id='snackDecrease' type="button" class="btn btn-danger">Remove</button>
+                <p id='snackCounter'></p>
+                <p class='totalWeightCount'></p>
+                <p class='totalPriceCount'></p>
+            </div>
+
+            <div class='the-button'>
+                <button id='validate' type="button" class="btn btn-primary">Primary</button>
+            </div>
+            <div class='totals'>
+                <p class='totalWeightCount'></p>
+                <p class='totalPriceCount'></p>
+                <br>
+                <p id='validateP'></p>
+            </div>
         </div>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-        <script src="public/main.js"></script>
+        <script src="main.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
 </html>
